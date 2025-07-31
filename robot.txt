@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luddinritonga.blog/sitemap.xml
