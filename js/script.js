@@ -1,15 +1,17 @@
 // Toggle menu mobile
 function toggleMenu() {
   const navbar = document.querySelector(".dropdown");
-  if (navbar.style.transform === "translateY(0px)") {
-    navbar.style.transform = "translateY(-500px)";
-  } else {
-    navbar.style.transform = "translateY(0px)";
+  const isOpen = navbar.style.transform === "translateY(0px)";
+  navbar.style.transform = isOpen ? "translateY(-500px)" : "translateY(0px)";
+
+  // Tutup semua dropdown-content saat buka menu
+  if (!isOpen) {
+    document.querySelectorAll('.dropdown-content').forEach(d => d.style.display = 'none');
   }
 }
 
 // Typewriter
-const texts = ["DEVELOPER", "YOUTUBER", "CODER"];
+const texts = ["DEVELOPER", "YOUTUBER", "Arduino Enthusiast"];
 let speed = 100, textIndex = 0, charIndex = 0;
 const textElement = document.querySelector(".typewriter-text");
 
@@ -32,15 +34,30 @@ function eraseText() {
 }
 window.onload = typeWriter;
 
-// Klik di luar hamburger → tutup hamburger
-document.addEventListener('click', function(event) {
-  const navbar = document.querySelector(".dropdown");
-  const hamburg = document.querySelector(".hamburg");
-  const isClickInsideNavbar = navbar.contains(event.target);
-  const isClickHamburg = hamburg.contains(event.target);
+// Toggle dropdown-content
+document.querySelectorAll('.link.has-dropdown > a').forEach(el=>{
+  el.addEventListener('click', e=>{
+    e.preventDefault();
+    const dropdown = el.nextElementSibling;
 
-  // Kalau bukan klik di hamburger atau navbar, tutup
-  if (!isClickInsideNavbar && !isClickHamburg) {
-    navbar.style.transform = "translateY(-500px)";
+    // kalau klik link yang sama, toggle (buka/tutup)
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    } else {
+      // tutup semua dropdown lain
+      document.querySelectorAll('.dropdown-content').forEach(d=> d.style.display='none');
+      dropdown.style.display = 'block';
+    }
+  });
+});
+
+// Tutup menu kalau klik di luar
+document.addEventListener('click', e => {
+  const menu = document.querySelector(".dropdown");
+  const hamburg = document.querySelector(".hamburg");
+  if (!menu.contains(e.target) && !hamburg.contains(e.target)) {
+    menu.style.transform = "translateY(-500px)";
+    // juga tutup semua dropdown-content
+    document.querySelectorAll('.dropdown-content').forEach(d=> d.style.display='none');
   }
 });
