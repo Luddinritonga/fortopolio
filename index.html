@@ -7,6 +7,7 @@
   <meta name="description" content="Portofolio Luddin Ritonga – berisi karya, projek, dan informasi tentang saya sebagai web developer.">
   <meta name="keywords" content="Luddin Ritonga, portofolio, web developer, blog, projek">
   <meta name="author" content="Luddin Ritonga">
+  <meta name="author" content="LuddinRitonga">
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -16,95 +17,36 @@
 </head>
 <body>
   <nav>
-  <div class="nav-container">
-    <div class="logo" data-aos="zoom-in">Luddin <span>Ritonga</span></div>
-    <div class="links">
-      <div class="link active"><a href="#">Home</a></div>
-
-      <div class="link has-dropdown">
-        <a href="#">Project</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in">Luddin <span>Ritonga</span></div>
+      
+      <div class="links">
+        <div class="link active"><a href="#">Home</a></div>
+        <div class="link "><a href="project.html">Project</a></div>
+        <div class="link"><a href="#">Materi</a></div>
+        <div class="link"><a href="#">Link Pages</a></div>
+        <div class="link"><a href="#">Blog</a></div>
+        <div class="link"><a href="#">Vidio</a></div>
+        <div class="link"><a href="#">Resource</a></div>
       </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Link Pages</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel1</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Test</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel2</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Blog</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
+      
+      <!-- Hamburger button (mobile) -->
+      <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
     </div>
-    <i class="fa-solid fa-bars hamburg" onclick="toggleMenu()"></i>
-  </div>
+  </nav>
 
-  <!-- Mobile menu, sama isinya -->
+  <!-- Mobile dropdown menu -->
   <div class="dropdown" id="mobileMenu">
     <div class="links">
       <a href="#">Home</a>
-
-      <div class="link has-dropdown">
-        <a href="#">Project</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Link Pages</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel1</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Test</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel2</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-      <div class="link has-dropdown">
-        <a href="#">Blog</a>
-        <div class="dropdown-content">
-          <a href="#">Artikel</a>
-          <a href="#">Tutorial</a>
-          <a href="#">Berita</a>
-        </div>
-      </div>
-
-     <!-- <i class="fa-solid fa-xmark cancel" onclick="toggleMenu()"></i> -->
+      <a href="project.html">Project</a>
+      <a href="#">Materi</a>
+      <a href="#">Link Pages</a>
+      <a href="#">Blog</a>
+      <a href="#">Vidio</a>
+      <a href="#">Resource</a>
     </div>
   </div>
-</nav>
 
 
  <section>

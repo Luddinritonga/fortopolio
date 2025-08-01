@@ -342,3 +342,78 @@ section {
 .link.has-dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Footer style */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0); /* transparan */
+  backdrop-filter: blur(5px);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #000;
+  z-index: 100;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* jarak antar teks dan ikon */
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #000;  /* warna ikon */
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff; /* warna saat hover */
+}
+
+
+/* bagian arduino.html */
+main {
+  max-width: 1000px;
+  margin: 80px auto 60px;
+  padding: 0 20px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 16px;
+  color: #555;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(3px);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}

@@ -11,7 +11,7 @@ function toggleMenu() {
 }
 
 // Typewriter
-const texts = ["DEVELOPER", "YOUTUBER", "Arduino Enthusiast"];
+const texts = ["DEVELOPER", "YOUTUBER", "CODER"];
 let speed = 100, textIndex = 0, charIndex = 0;
 const textElement = document.querySelector(".typewriter-text");
 
@@ -61,3 +61,16 @@ document.addEventListener('click', e => {
     document.querySelectorAll('.dropdown-content').forEach(d=> d.style.display='none');
   }
 });
+
+document.getElementById("refreshProject").addEventListener("click", function(e){
+    e.preventDefault(); // cegah scroll ke atas karena #
+    location.reload();
+  });
+
+const buttons = document.getElementsByClassName("refresh");
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function(e){
+    e.preventDefault(); 
+    location.reload();
+  });
+}
