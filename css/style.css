@@ -9,7 +9,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Body & background */
+/* Body */
 body {
   width: 100%;
   height: 100vh;
@@ -51,19 +51,18 @@ nav {
   font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
   color: white;
   cursor: pointer;
-  display: none; /* default: sembunyikan, akan dimunculkan di responsive */
+  display: none;
 }
 
-/* Saat mode mobile (misalnya max-width: 884px) */
+/* Mobile */
 @media (max-width: 884px) {
   .hamburg { display: block; }
   .cancel { display: none; }
 }
 
-/* Tambahkan class .menu-open di body atau nav ketika menu dibuka */
+/* Menu open */
 .menu-open .hamburg { display: none; }
 .menu-open .cancel { display: block; }
-
 
 /* Navbar links */
 .nav-container .links {
@@ -79,22 +78,18 @@ nav {
   transition: 0.3s linear;
 }
 
-.nav-container .links a:hover {
-  color: rgb(58, 211, 3);
-  border-bottom: 2px solid rgb(58, 211, 3);
-}
-
+.nav-container .links a:hover,
 .nav-container .links .active {
   color: rgb(58, 211, 3);
   border-bottom: 2px solid rgb(58, 211, 3);
 }
 
-/* NEW: Dropdown (mobile) kecil, elegan, tidak full height */
+/* Dropdown (mobile) */
 .dropdown {
   position: absolute;
-  top: 60px; /* muncul tepat di bawah navbar */
+  top: 60px;
   right: 10px;
-  width: 220px; /* lebar menu */
+  width: 220px;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -127,8 +122,12 @@ nav {
   color: black;
 }
 
-/* Skill dropdown (desktop hover + mobile click) */
-.skill-dropdown:hover .dropdown-content {
+/* Dropdown submenu (desktop) */
+.link.has-dropdown {
+  position: relative;
+}
+
+.link.has-dropdown:hover .dropdown-content {
   display: block;
 }
 
@@ -137,22 +136,22 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgb(58, 211, 3);
+  background-color: rgba(0, 0, 0, 0.9);
+  min-width: 150px;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  z-index: 50;
-  width: 150px;
+  z-index: 500;
 }
 
 .dropdown-content a {
   display: block;
-  padding: 10px;
   color: white;
+  padding: 10px;
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .dropdown-content a:hover {
-  background-color: #1e3a8a;
+  background-color: rgb(135, 151, 129);
 }
 
 /* Main section */
@@ -175,12 +174,13 @@ section {
   min-height: 100px;
 }
 
-/* Heading & text */
+/* Text & typewriter */
 .content h1 {
   font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
 }
 
-.content h1 span {
+.content h1 span,
+.typewriter span {
   color: rgb(58, 211, 3);
   text-shadow: 0 0 10px rgb(58, 211, 3);
   font-weight: 700;
@@ -189,11 +189,6 @@ section {
 .content .typewriter {
   font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
   font-weight: 700;
-}
-
-.typewriter span {
-  color: rgb(58, 211, 3);
-  text-shadow: 0 0 10px rgb(58, 211, 3);
 }
 
 .content p {
@@ -310,46 +305,13 @@ section {
   }
 }
 
-/* Dropdown submenu */
-.link.has-dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  min-width: 150px;
-  border-radius: 0 0 5px 5px;
-  z-index: 500;
-}
-
-.dropdown-content a {
-  display: block;
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-  background-color: rgb(135, 151, 129);
-}
-
-/* Show dropdown on hover (desktop) */
-.link.has-dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Footer style */
+/* Footer */
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0); /* transparan */
+  background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(5px);
   text-align: center;
   padding: 10px 0;
@@ -362,12 +324,12 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* jarak antar teks dan ikon */
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .social-links a {
-  color: #000;  /* warna ikon */
+  color: #000;
   text-decoration: none;
   margin: 0 5px;
   font-size: 1.5rem;
@@ -375,11 +337,20 @@ section {
 }
 
 .social-links a:hover {
-  color: #007bff; /* warna saat hover */
+  color: #007bff;
 }
 
+@media (max-width: 480px) {
+  .footer-content {
+    gap: 10px;
+  }
+  .social-links a {
+    font-size: 1.3rem;
+    margin: 0 4px;
+  }
+}
 
-/* bagian arduino.html */
+/* Halaman arduino.html */
 main {
   max-width: 1000px;
   margin: 80px auto 60px;

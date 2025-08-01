@@ -74,3 +74,16 @@ for (let i = 0; i < buttons.length; i++) {
     location.reload();
   });
 }
+
+function toggleLevelDropdown() {
+  var options = document.getElementById("levelOptions");
+  options.style.display = (options.style.display === "block") ? "none" : "block";
+}
+
+// Optional: klik di luar untuk tutup dropdown
+document.addEventListener("click", function(e) {
+  var dropdown = document.querySelector(".dropdown-level");
+  if (!dropdown.contains(e.target)) {
+    document.getElementById("levelOptions").style.display = "none";
+  }
+});
