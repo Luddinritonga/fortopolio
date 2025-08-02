@@ -5,4 +5,23 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <loc>https://luddinritonga.blog/linkpages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <loc>https://luddinritonga.blog/project</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <loc>https://luddinritonga.blog/arduino/arduino</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+    <loc>https://luddinritonga.blog/python/python</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
